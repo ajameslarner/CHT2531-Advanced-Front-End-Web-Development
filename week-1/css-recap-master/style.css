@@ -40,8 +40,11 @@ body {
 }
 
 .col1, .col2, .col3 {
+    display: flex;
     outline: 5px solid green;
     padding: 50px;
     margin: 50px;
+    width: auto;
+    justify-content: center;
 }
 
