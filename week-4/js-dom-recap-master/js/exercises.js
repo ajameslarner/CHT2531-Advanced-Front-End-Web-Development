@@ -9,17 +9,35 @@ const a = document.querySelector("#go-btn");
 a.addEventListener("click", doSearch, false);
 const b = document.querySelector("#search-box");
 b.focus();
+
 const newFrag = document.createDocumentFragment();
 const newPara = document.createElement("p");
 
 function doSearch()
 {
-  newPara.textContent = `You searched for ${b.value}.`;
-  newFrag.appendChild(newPara);
+  const results = films.filter(function(film) {
+    if (film.title === b.value) { 
+      return true; 
+    };
+    return false;
+  });
+
+  results.forEach(function(res) {
+    newPara.textContent = `You matched with ${res.title}.`;
+    newFrag.appendChild(newPara);
+  });
+
+  if (results.length === 0) {
+    newPara.textContent = `No matches!`;
+    newFrag.appendChild(newPara);
+  }
+
+  
 
   const newBlock = document.querySelector("#film-list");
   newBlock.appendChild(newFrag);
-}
+};
+
 
 
 //1. Add some code so that the function doSearch() runs whenever the user clicks the GO button. You will need to use querySelector to grab hold of the button and then add an event listener to it. See https://github.com/CHT2531/js-dom-recap/blob/master/notes.md#events for an example.
