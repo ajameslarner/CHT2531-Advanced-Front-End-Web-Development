@@ -5,18 +5,17 @@ const films=[
   {title:"The Incredibles", year:2004, duration:115, certificate:"U"},
 ]
 
-const b = document.querySelector("#go-btn");
-b.addEventListener("click", doSearch, false);
+const a = document.querySelector("#go-btn");
+a.addEventListener("click", doSearch, false);
+const b = document.querySelector("#search-box");
+b.focus();
+const newFrag = document.createDocumentFragment();
+const newPara = document.createElement("p");
 
 function doSearch()
 {
-  const newFrag = document.createDocumentFragment();
-
-  films.forEach(function(film){
-    const newPara = document.createElement("p");
-    newPara.textContent = `The film title is: ${film.title} (${film.certificate}) and the year is ${film.year} and the duration is ${film.duration} and the certficate is `;
-    newFrag.appendChild(newPara);
-  });
+  newPara.textContent = `You searched for ${b.value}.`;
+  newFrag.appendChild(newPara);
 
   const newBlock = document.querySelector("#film-list");
   newBlock.appendChild(newFrag);
