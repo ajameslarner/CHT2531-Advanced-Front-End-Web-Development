@@ -14,7 +14,7 @@ function doSearch()
 
   films.forEach(function(film){
     const newPara = document.createElement("p");
-    newPara.textContent = `The film title is: ${film.title} and the year is ${film.year} and the duration is ${film.duration} and the certficate is ${film.certificate}`;
+    newPara.textContent = `The film title is: ${film.title} (${film.certificate}) and the year is ${film.year} and the duration is ${film.duration} and the certficate is `;
     newFrag.appendChild(newPara);
   });
 
