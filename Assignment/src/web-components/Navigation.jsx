@@ -1,12 +1,10 @@
 import React, {useState, useEffect } from 'react';
 //Styling
-import { Button, Menu, Typography, Avatar} from 'antd';
+import { Button, Menu, Typography} from 'antd';
 //Links
 import { Link } from 'react-router-dom';
 //Icons
-import { HomeOutlined, DatabaseOutlined, MoneyCollectOutlined, AlertOutlined, MenuOutlined } from '@ant-design/icons';
-//Logo
-import icon from '../assets/images/logo192.png';
+import { HomeOutlined, DatabaseOutlined, AlertOutlined, MenuOutlined } from '@ant-design/icons';
 
 const Navigation = () => {
     const [MobileMenuSwitch, setMobileMenuSwitch] = useState(true);

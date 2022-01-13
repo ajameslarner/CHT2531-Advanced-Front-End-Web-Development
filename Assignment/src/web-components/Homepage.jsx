@@ -1,6 +1,6 @@
 import React from 'react';
 import millify from 'millify';
-import { Space, Card, Typography, Row, Col, Statistic } from 'antd';
+import { Space, Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 
 import { useGetCoinsQuery } from '../services/CoinAPI';

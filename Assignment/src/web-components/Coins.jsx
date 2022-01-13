@@ -29,16 +29,16 @@ export const Coins = ({simplified}) => {
             <Row gutter={[24, 24]}>
                 {/* Check using simplified parament to hide search function from homepage */}
                 {!simplified && (
-                    <div className="search-crypto">
+                    <div className="search-coin">
                         <Input placeholder="Search Coins" onChange={(e) => setFilteredTerm(e.target.value)} />
                     </div>
                 )}
                 
-                <Row className="crypto-card-container">
+                <Row className="coin-card-container">
                     {coins?.map((currency) => (
-                        <Col xs={6} sm={6} lg={1} className="crypto-card" key={currency.uuid}>
+                        <Col xs={6} sm={6} lg={1} className="coin-card" key={currency.uuid}>
                             <Link key={currency.uuid} to={`/coins/${currency.uuid}`}>
-                                <Card title={`${currency.rank}. ${currency.name}`} extra={<img className="crypto-image" src={currency.iconUrl}/>} hoverable>
+                                <Card title={`${currency.rank}. ${currency.name}`} extra={<img className="coin-image" src={currency.iconUrl}/>} hoverable>
                                     <p>Price: {millify(currency.price)}</p>
                                     <p>Market Cap: {millify(currency.marketCap)}</p>
                                     <p>Daily Change: {millify(currency.change)}</p>
