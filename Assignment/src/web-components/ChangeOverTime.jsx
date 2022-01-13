@@ -5,20 +5,20 @@ import { Col, Row, Typography } from 'antd';
 const { Title } = Typography;
 
 const ChangeOverTime = ({ coinHistory, currentPrice, coinName }) => {
-  const coinPrice = [];
-  const coinStamp = [];
+  const CurrentCoinPrice = [];
+  const CurrentCoinTime = [];
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
-    coinPrice.push(coinHistory?.data?.history[i].price);
-    coinStamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
+    CurrentCoinPrice.push(coinHistory?.data?.history[i].price);
+    CurrentCoinTime.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
   }
 
   const data = {
-    labels: coinStamp,
+    labels: CurrentCoinTime,
     datasets: [
       {
         label: 'Price In USD',
-        data: coinPrice,
+        data: CurrentCoinPrice,
         fill: false,
         backgroundColor: '#0071bd',
         borderColor: '#0071bd',
